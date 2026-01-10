@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { LandingLayout } from "@/components/layout";
+import { Button, Card } from "@/components/ui";
 import {
   TrendingUp,
   Shield,
@@ -7,316 +9,351 @@ import {
   BarChart3,
   Users,
   ArrowRight,
-  CheckCircle2
-} from 'lucide-react'
+  CheckCircle2,
+} from "lucide-react";
 
 export default function HomePage() {
   const features = [
     {
-      icon: TrendingUp,
-      title: 'AI-Powered Trading',
-      description: 'Advanced AI algorithms analyze markets in real-time to provide you with the best trading opportunities.',
+      icon: "🤖",
+      title: "AI-Powered Trading",
+      description:
+        "Advanced AI algorithms analyze markets in real-time to provide you with the best trading opportunities.",
     },
     {
-      icon: Shield,
-      title: 'Risk Management',
-      description: 'Comprehensive risk management tools to protect your capital and maximize returns.',
+      icon: "🛡️",
+      title: "Risk Management",
+      description:
+        "Comprehensive risk management tools to protect your capital and maximize returns.",
     },
     {
-      icon: Award,
-      title: 'Funded Challenges',
-      description: 'Prove your skills and get access to funded trading accounts with competitive profit splits.',
+      icon: "🏆",
+      title: "Funded Challenges",
+      description:
+        "Prove your skills and get access to funded trading accounts with competitive profit splits.",
     },
     {
-      icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Detailed analytics and performance metrics to track and improve your trading strategy.',
+      icon: "📊",
+      title: "Advanced Analytics",
+      description:
+        "Detailed analytics and performance metrics to track and improve your trading strategy.",
     },
     {
-      icon: Zap,
-      title: 'Real-Time Execution',
-      description: 'Lightning-fast trade execution with institutional-grade infrastructure.',
+      icon: "⚡",
+      title: "Real-Time Execution",
+      description:
+        "Lightning-fast trade execution with institutional-grade infrastructure.",
     },
     {
-      icon: Users,
-      title: 'Community & Leaderboard',
-      description: 'Join a community of traders and compete on global leaderboards.',
+      icon: "👥",
+      title: "Community & Leaderboard",
+      description:
+        "Join a community of traders and compete on global leaderboards.",
     },
-  ]
+  ];
 
   const stats = [
-    { value: '10,000+', label: 'Active Traders' },
-    { value: '$50M+', label: 'Total Volume' },
-    { value: '99.9%', label: 'Uptime' },
-    { value: '24/7', label: 'Support' },
-  ]
+    { value: "10,000+", label: "Active Traders" },
+    { value: "$50M+", label: "Total Volume" },
+    { value: "99.9%", label: "Uptime" },
+    { value: "24/7", label: "Support" },
+  ];
 
   const pricingPlans = [
     {
-      name: 'Demo',
-      price: 'Free',
-      description: 'Perfect for getting started',
+      name: "Demo",
+      price: "Free",
+      description: "Perfect for getting started",
       features: [
-        'Virtual trading account',
-        'Real-time market data',
-        'Basic analytics',
-        'Community access',
+        "Virtual trading account",
+        "Real-time market data",
+        "Basic analytics",
+        "Community access",
       ],
     },
     {
-      name: 'Challenge',
-      price: '$99',
-      description: 'Prove your trading skills',
+      name: "Challenge",
+      price: "$99",
+      description: "Prove your trading skills",
       features: [
-        'Everything in Demo',
-        '$10,000 challenge account',
-        'Advanced analytics',
-        'Priority support',
-        'Get funded on success',
+        "Everything in Demo",
+        "$10,000 challenge account",
+        "Advanced analytics",
+        "Priority support",
+        "Get funded on success",
       ],
       popular: true,
     },
     {
-      name: 'Pro',
-      price: '$299',
-      description: 'For professional traders',
+      name: "Pro",
+      price: "$299",
+      description: "For professional traders",
       features: [
-        'Everything in Challenge',
-        '$50,000 challenge account',
-        'AI trading signals',
-        'Custom risk parameters',
-        '80% profit split',
-        'Dedicated account manager',
+        "Everything in Challenge",
+        "$50,000 challenge account",
+        "AI trading signals",
+        "Custom risk parameters",
+        "80% profit split",
+        "Dedicated account manager",
       ],
     },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <LandingLayout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="container-custom relative py-20 lg:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
-              <Zap className="mr-2 h-4 w-4" />
-              <span>Trusted by 10,000+ traders worldwide</span>
-            </div>
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center px-6 py-20"
+      >
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <span className="inline-block px-4 py-2 rounded-full bg-purple/20 border border-purple/30 text-purple-300 text-sm font-medium mb-6">
+              ⚡ Powered by AI - Trusted by 10,000+ Traders
+            </span>
+          </div>
 
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Trade Smarter with{' '}
-              <span className="block text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text">
-                AI-Powered Insights
-              </span>
-            </h1>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+            Trade Smarter with
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple">
+              AI-Powered Insights
+            </span>
+          </h1>
 
-            <p className="mb-10 text-xl text-primary-100 sm:text-2xl">
-              Join the next generation of prop trading. Get funded, trade with confidence,
-              and keep up to 80% of your profits.
-            </p>
+          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
+            Join the next generation of prop trading. Get funded, trade with
+            confidence, and keep up to 80% of your profits.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/register"
-                className="btn btn-primary bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-xl"
-              >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link to="/register">
+              <Button variant="primary" size="lg">
                 Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                to="/login"
-                className="btn bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm px-8 py-4 text-lg font-semibold"
-              >
+              </Button>
+            </Link>
+            <Link to="/login">
+              <Button variant="outline" size="lg">
                 Sign In
-              </Link>
-            </div>
+              </Button>
+            </Link>
+          </div>
 
-            <div className="mt-12 flex items-center justify-center gap-8 text-sm text-primary-100">
-              <div className="flex items-center">
-                <CheckCircle2 className="mr-2 h-5 w-5 text-success-300" />
-                No credit card required
-              </div>
-              <div className="flex items-center">
-                <CheckCircle2 className="mr-2 h-5 w-5 text-success-300" />
-                Cancel anytime
-              </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-400">
+            <div className="flex items-center">
+              <CheckCircle2 className="mr-2 h-5 w-5 text-profit" />
+              No credit card required
+            </div>
+            <div className="flex items-center">
+              <CheckCircle2 className="mr-2 h-5 w-5 text-profit" />
+              Cancel anytime
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="border-b border-gray-200 bg-white py-12">
-        <div className="container-custom">
+      <section className="py-20 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary-600">{stat.value}</div>
-                <div className="mt-2 text-sm text-gray-600">{stat.label}</div>
-              </div>
+              <Card
+                key={index}
+                variant="glass"
+                padding="lg"
+                className="text-center"
+              >
+                <div className="text-4xl font-bold text-primary mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Everything You Need to Succeed
+      <section id="features" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Powerful Features for
+              <br />
+              Smarter Trading
             </h2>
-            <p className="text-lg text-gray-600">
-              Professional trading tools and resources designed to help you reach your goals
+            <p className="text-xl text-gray-400">
+              Everything you need to trade like a professional
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <div
-                  key={index}
-                  className="group card hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              )
-            })}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature, idx) => (
+              <Card
+                key={idx}
+                variant="glass"
+                padding="lg"
+                hover
+                className="text-center"
+              >
+                <div className="text-5xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400">{feature.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container-custom">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+      <section id="pricing" className="py-20 px-6 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Choose Your Path to Success
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-xl text-gray-400">
               Start free or go pro. All plans include our core trading features.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-3">
             {pricingPlans.map((plan, index) => (
-              <div
+              <Card
                 key={index}
-                className={`card relative ${
-                  plan.popular
-                    ? 'border-2 border-primary-500 shadow-xl'
-                    : 'border border-gray-200'
-                }`}
+                variant={plan.popular ? "elevated" : "glass"}
+                padding="lg"
+                className={`relative ${plan.popular ? "border-2 border-primary" : ""}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="badge bg-primary-600 text-white px-4 py-1.5 text-xs font-semibold">
+                    <span className="px-4 py-1.5 bg-primary text-gray-900 rounded-full text-xs font-semibold">
                       MOST POPULAR
                     </span>
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold text-gray-900">{plan.name}</h3>
-                  <p className="text-gray-600">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-gray-400">{plan.description}</p>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-4xl font-extrabold text-gray-900">{plan.price}</span>
-                  {plan.price !== 'Free' && (
-                    <span className="text-gray-600">/month</span>
+                  <span className="text-4xl font-extrabold text-white">
+                    {plan.price}
+                  </span>
+                  {plan.price !== "Free" && (
+                    <span className="text-gray-400">/month</span>
                   )}
                 </div>
 
                 <ul className="mb-8 space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <CheckCircle2 className="mr-3 h-5 w-5 flex-shrink-0 text-success-600" />
-                      <span className="text-gray-700">{feature}</span>
+                      <CheckCircle2 className="mr-3 h-5 w-5 flex-shrink-0 text-profit" />
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <Link
-                  to="/register"
-                  className={`btn w-full ${
-                    plan.popular
-                      ? 'btn-primary'
-                      : 'btn-outline'
-                  }`}
-                >
-                  Get Started
+                <Link to="/register" className="block">
+                  <Button
+                    variant={plan.popular ? "primary" : "outline"}
+                    className="w-full"
+                  >
+                    Get Started
+                  </Button>
                 </Link>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-secondary-600 py-20 text-white">
-        <div className="container-custom text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            Ready to Start Trading?
+      {/* Live Market Performance */}
+      <section id="market" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            Live Market Performance
           </h2>
-          <p className="mb-8 text-xl text-primary-100">
-            Join thousands of traders already using TradeSense AI
-          </p>
-          <Link
-            to="/register"
-            className="btn bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-xl inline-flex items-center"
-          >
-            Create Free Account
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+
+          <Card variant="glass" padding="md">
+            <div className="overflow-x-auto">
+              <div className="flex gap-4 pb-4">
+                {[
+                  { symbol: "BTC", name: "Bitcoin", price: 43250, change: 2.4 },
+                  {
+                    symbol: "ETH",
+                    name: "Ethereum",
+                    price: 2890,
+                    change: -1.2,
+                  },
+                  { symbol: "SOL", name: "Solana", price: 98.5, change: 5.7 },
+                  { symbol: "ADA", name: "Cardano", price: 0.58, change: 3.2 },
+                ].map((market, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-shrink-0 w-48 p-4 rounded-lg bg-gray-900/50 hover:bg-gray-800/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple" />
+                      <div>
+                        <div className="font-semibold text-white">
+                          {market.symbol}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {market.name}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="font-mono font-bold text-white text-lg">
+                      ${market.price.toLocaleString()}
+                    </div>
+                    <div
+                      className={`text-sm ${market.change >= 0 ? "text-profit" : "text-loss"}`}
+                    >
+                      {market.change >= 0 ? "+" : ""}
+                      {market.change}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 bg-white py-12">
-        <div className="container-custom">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div className="col-span-2">
-              <div className="mb-4 flex items-center">
-                <TrendingUp className="h-8 w-8 text-primary-600" />
-                <span className="ml-2 text-2xl font-bold text-gray-900">TradeSense AI</span>
-              </div>
-              <p className="text-gray-600">
-                Empowering traders with AI-powered insights and professional-grade tools.
-              </p>
+      {/* CTA Section */}
+      <section id="about" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <Card variant="elevated" padding="lg">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Your Edge in Crypto Trading
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join 10,000+ traders who trust our platform
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              <Link to="/register">
+                <Button variant="primary" size="lg">
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
-
-            <div>
-              <h3 className="mb-4 font-semibold text-gray-900">Product</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li><Link to="/" className="hover:text-primary-600">Features</Link></li>
-                <li><Link to="/" className="hover:text-primary-600">Pricing</Link></li>
-                <li><Link to="/" className="hover:text-primary-600">Challenges</Link></li>
-              </ul>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400">
+              <span>✓ Next Level Security</span>
+              <span>✓ Seamless Experience</span>
+              <span>✓ Real-Time Alerts</span>
             </div>
-
-            <div>
-              <h3 className="mb-4 font-semibold text-gray-900">Company</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li><Link to="/" className="hover:text-primary-600">About</Link></li>
-                <li><Link to="/" className="hover:text-primary-600">Contact</Link></li>
-                <li><Link to="/" className="hover:text-primary-600">Support</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 border-t border-gray-200 pt-8 text-center text-gray-600">
-            <p>&copy; 2024 TradeSense AI. All rights reserved.</p>
-          </div>
+          </Card>
         </div>
-      </footer>
-    </div>
-  )
+      </section>
+    </LandingLayout>
+  );
 }
