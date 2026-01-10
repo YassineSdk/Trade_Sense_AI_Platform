@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-gray-900 hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-primary/40;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 hover:border-gray-600;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-gray-900;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-white hover:bg-white/10;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-md {
+    @apply px-6 py-3 text-base;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-xl transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply card bg-gray-900/50 backdrop-blur-xl border border-white/10;
+  }
+
+  .card-solid {
+    @apply card bg-gray-900 border border-gray-800;
+  }
+
+  .card-elevated {
+    @apply card bg-gray-900 border border-gray-800 shadow-2xl shadow-black/50;
+  }
+
+  .card-hover {
+    @apply hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none;
+  }
+
+  .input-error {
+    @apply border-loss focus:border-loss focus:ring-loss/20;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Price displays */
+  .price-up {
+    @apply text-profit;
+  }
+
+  .price-down {
+    @apply text-loss;
+  }
+
+  /* Spinner */
+  .spinner {
+    @apply inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/10;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}

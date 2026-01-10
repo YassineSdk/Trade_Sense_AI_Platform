@@ -39,7 +39,7 @@ curl http://localhost:5000/health
 - **Reason:** Node.js is not installed on this system
 - **Required:** Node.js >= 18.x
 - **Port (when running):** 3000
-- **Framework:** Next.js 14
+- **Framework:** React 18 + Vite
 
 #### To Run Frontend:
 1. Install Node.js 18+ from https://nodejs.org/
@@ -57,7 +57,7 @@ curl http://localhost:5000/health
 | Flask Backend | ✅ Running | Port 5000, Development mode |
 | SQLite Database | ✅ Connected | Tables created, seeded with test data |
 | Redis Cache | ⚠️ Unavailable | Optional for development |
-| Next.js Frontend | ❌ Not Running | Node.js not installed |
+| React Frontend | ❌ Not Running | Node.js not installed |
 | PostgreSQL | ❌ Not Running | Using SQLite for development |
 | Docker | ❌ Not Available | Not installed on this system |
 
@@ -270,9 +270,12 @@ Trade_Sense_AI_Platform/
 │   └── requirements/          ✅ Dependencies defined
 ├── frontend/                   ❌ Not running (Node.js needed)
 │   ├── src/
-│   │   ├── app/               📁 Next.js app directory
+│   │   ├── pages/             📁 React page components
 │   │   ├── components/        📁 React components
-│   │   └── lib/               📁 Utilities
+│   │   ├── services/          📁 API client
+│   │   ├── store/             📁 Zustand state management
+│   │   └── utils/             📁 Utilities
+│   ├── vite.config.ts         📁 Vite configuration
 │   └── package.json           📁 Node dependencies
 ├── docs/                       ✅ Documentation
 ├── infrastructure/             📁 Docker & deployment configs
@@ -299,7 +302,7 @@ Trade_Sense_AI_Platform/
 - [x] Logging system
 - [x] Error handling
 - [x] Health check endpoint
-- [x] Frontend project structure (not running yet)
+- [x] Frontend React + Vite project structure (not running yet)
 - [x] Docker configuration files
 - [x] Documentation written
 - [x] Backend running successfully
@@ -314,7 +317,7 @@ Trade_Sense_AI_Platform/
 5. ✅ API blueprint architecture
 6. ✅ Error handling and logging
 7. ✅ Configuration management
-8. ✅ Next.js frontend structure
+8. ✅ React + Vite frontend structure with TypeScript
 9. ✅ Docker compose configuration
 10. ✅ Documentation and testing guides
 
@@ -384,9 +387,19 @@ sqlite3 instance/tradesense_dev.db ".schema users"
 ### For Frontend Development (when Node.js is installed)
 
 1. Install dependencies: `cd frontend && npm install`
-2. Start dev server: `npm run dev`
-3. Access at: http://localhost:3000
-4. Frontend will proxy API requests to backend on port 5000
+2. Copy environment: `cp .env.example .env`
+3. Start dev server: `npm run dev`
+4. Access at: http://localhost:3000
+5. Frontend will proxy API requests to backend on port 5000
+
+**Tech Stack:**
+- React 18 + TypeScript
+- Vite (build tool)
+- React Router (routing)
+- Zustand (state management)
+- Axios (API client)
+- Tailwind CSS (styling)
+- React Hook Form + Zod (forms & validation)
 
 ### For Full Stack Development
 
@@ -405,7 +418,7 @@ sqlite3 instance/tradesense_dev.db ".schema users"
 - **MILESTONE_1_COMPLETE.md** - Milestone 1 completion report
 - **MILESTONE_1_TESTING.md** - Testing checklist
 - **backend/README.md** - Backend documentation
-- **frontend/README.md** - Frontend documentation
+- **frontend/README.md** - React frontend documentation
 - **docs/ARCHITECTURE.md** - System architecture
 - **docs/MILESTONE_ROADMAP.md** - Development roadmap
 
@@ -413,7 +426,8 @@ sqlite3 instance/tradesense_dev.db ".schema users"
 
 - Flask Documentation: https://flask.palletsprojects.com/
 - SQLAlchemy Docs: https://docs.sqlalchemy.org/
-- Next.js Docs: https://nextjs.org/docs
+- React Docs: https://react.dev/
+- Vite Docs: https://vitejs.dev/
 - PostgreSQL Guide: https://www.postgresql.org/docs/
 
 ---
