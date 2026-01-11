@@ -23,7 +23,10 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
       {/* Animated background */}
       <div className="fixed inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple rounded-full filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       <div className="relative z-10">
@@ -32,27 +35,44 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
             <div className="max-w-7xl mx-auto px-6 py-4">
               <div className="flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
                   <div className="h-8 w-8 bg-gradient-to-br from-primary to-purple rounded-lg flex items-center justify-center">
                     <span className="text-gray-900 font-bold text-lg">T</span>
                   </div>
-                  <span className="text-xl font-bold text-white">TradeSense</span>
+                  <span className="text-xl font-bold text-white">
+                    TradeSense
+                  </span>
                 </Link>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8">
-                  <Link to="#home" className="text-gray-300 hover:text-white transition-colors">
+                  <a
+                    href="#home"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
                     Home
-                  </Link>
-                  <Link to="#market" className="text-gray-300 hover:text-white transition-colors">
-                    Market
-                  </Link>
-                  <Link to="#features" className="text-gray-300 hover:text-white transition-colors">
+                  </a>
+                  <a
+                    href="#market"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Markets
+                  </a>
+                  <a
+                    href="#features"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
                     Features
-                  </Link>
-                  <Link to="#about" className="text-gray-300 hover:text-white transition-colors">
+                  </a>
+                  <a
+                    href="#about"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
                     About Us
-                  </Link>
+                  </a>
                 </div>
 
                 {/* Desktop Auth Buttons */}
@@ -74,11 +94,26 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="md:hidden text-white"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     {isMobileMenuOpen ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
                     ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
                     )}
                   </svg>
                 </button>
@@ -88,34 +123,34 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
               {isMobileMenuOpen && (
                 <div className="md:hidden mt-4 pt-4 border-t border-white/10">
                   <div className="flex flex-col space-y-4">
-                    <Link
-                      to="#home"
+                    <a
+                      href="#home"
                       className="text-gray-300 hover:text-white transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Home
-                    </Link>
-                    <Link
-                      to="#market"
+                    </a>
+                    <a
+                      href="#market"
                       className="text-gray-300 hover:text-white transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Market
-                    </Link>
-                    <Link
-                      to="#features"
+                      Markets
+                    </a>
+                    <a
+                      href="#features"
                       className="text-gray-300 hover:text-white transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Features
-                    </Link>
-                    <Link
-                      to="#about"
+                    </a>
+                    <a
+                      href="#about"
                       className="text-gray-300 hover:text-white transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       About Us
-                    </Link>
+                    </a>
                     <div className="flex flex-col gap-2 pt-4">
                       <Link to="/login">
                         <Button variant="ghost" size="sm" className="w-full">
@@ -145,17 +180,26 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
                   <h4 className="text-white font-semibold mb-4">Product</h4>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>
-                      <a href="#features" className="hover:text-white transition-colors">
+                      <a
+                        href="#features"
+                        className="hover:text-white transition-colors"
+                      >
                         Features
                       </a>
                     </li>
                     <li>
-                      <a href="#pricing" className="hover:text-white transition-colors">
+                      <a
+                        href="#pricing"
+                        className="hover:text-white transition-colors"
+                      >
                         Pricing
                       </a>
                     </li>
                     <li>
-                      <a href="#security" className="hover:text-white transition-colors">
+                      <a
+                        href="#security"
+                        className="hover:text-white transition-colors"
+                      >
                         Security
                       </a>
                     </li>
@@ -165,17 +209,26 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
                   <h4 className="text-white font-semibold mb-4">Company</h4>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>
-                      <a href="#about" className="hover:text-white transition-colors">
+                      <a
+                        href="#about"
+                        className="hover:text-white transition-colors"
+                      >
                         About
                       </a>
                     </li>
                     <li>
-                      <a href="#careers" className="hover:text-white transition-colors">
+                      <a
+                        href="#careers"
+                        className="hover:text-white transition-colors"
+                      >
                         Careers
                       </a>
                     </li>
                     <li>
-                      <a href="#blog" className="hover:text-white transition-colors">
+                      <a
+                        href="#blog"
+                        className="hover:text-white transition-colors"
+                      >
                         Blog
                       </a>
                     </li>
@@ -185,17 +238,26 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
                   <h4 className="text-white font-semibold mb-4">Resources</h4>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>
-                      <a href="#documentation" className="hover:text-white transition-colors">
+                      <a
+                        href="#documentation"
+                        className="hover:text-white transition-colors"
+                      >
                         Documentation
                       </a>
                     </li>
                     <li>
-                      <a href="#api" className="hover:text-white transition-colors">
+                      <a
+                        href="#api"
+                        className="hover:text-white transition-colors"
+                      >
                         API
                       </a>
                     </li>
                     <li>
-                      <a href="#support" className="hover:text-white transition-colors">
+                      <a
+                        href="#support"
+                        className="hover:text-white transition-colors"
+                      >
                         Support
                       </a>
                     </li>
@@ -205,17 +267,26 @@ export const LandingLayout: React.FC<LandingLayoutProps> = ({
                   <h4 className="text-white font-semibold mb-4">Legal</h4>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>
-                      <a href="#privacy" className="hover:text-white transition-colors">
+                      <a
+                        href="#privacy"
+                        className="hover:text-white transition-colors"
+                      >
                         Privacy
                       </a>
                     </li>
                     <li>
-                      <a href="#terms" className="hover:text-white transition-colors">
+                      <a
+                        href="#terms"
+                        className="hover:text-white transition-colors"
+                      >
                         Terms
                       </a>
                     </li>
                     <li>
-                      <a href="#compliance" className="hover:text-white transition-colors">
+                      <a
+                        href="#compliance"
+                        className="hover:text-white transition-colors"
+                      >
                         Compliance
                       </a>
                     </li>
