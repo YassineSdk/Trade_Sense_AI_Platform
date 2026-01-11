@@ -140,6 +140,19 @@ class BaseModel(db.Model):
         return cls.query.get(id)
 
     @classmethod
+    def find_by_id(cls, id: int) -> Optional["BaseModel"]:
+        """
+        Find instance by ID (alias for get_by_id)
+
+        Args:
+            id: Primary key ID
+
+        Returns:
+            Model instance or None
+        """
+        return cls.get_by_id(id)
+
+    @classmethod
     def get_all(
         cls,
         page: Optional[int] = None,

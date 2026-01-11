@@ -79,13 +79,16 @@ def api_info():
     ), 200
 
 
-# Import and register sub-blueprints (will be added in future milestones)
-# from app.api.v1.auth import auth_bp
-# from app.api.v1.users import users_bp
-# from app.api.v1.challenges import challenges_bp
-# from app.api.v1.trades import trades_bp
+# Import and register auth blueprint
+from app.api.v1.endpoints.auth import auth_bp
 
-# api_v1_bp.register_blueprint(auth_bp, url_prefix="/auth")
+api_v1_bp.register_blueprint(auth_bp, url_prefix="/auth")
+
+# Future blueprints will be registered here:
+# from app.api.v1.endpoints.users import users_bp
+# from app.api.v1.endpoints.challenges import challenges_bp
+# from app.api.v1.endpoints.trades import trades_bp
+
 # api_v1_bp.register_blueprint(users_bp, url_prefix="/users")
 # api_v1_bp.register_blueprint(challenges_bp, url_prefix="/challenges")
 # api_v1_bp.register_blueprint(trades_bp, url_prefix="/trades")

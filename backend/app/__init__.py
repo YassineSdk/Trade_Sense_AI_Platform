@@ -74,11 +74,15 @@ def init_extensions(app: Flask) -> None:
     # CORS
     CORS(
         app,
-        origins=app.config.get("CORS_ORIGINS", ["http://localhost:3000"]),
+        origins=app.config.get("CORS_ORIGINS", ["http://localhost:3000", "http://localhost:3001"]),
         supports_credentials=app.config.get("CORS_SUPPORTS_CREDENTIALS", True),
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     )
+
+    # JWT Authentication
+    from app.utils.jwt_utils import init_jwt
+    init_jwt(app)
 
     # Cache (Redis)
     try:
@@ -87,10 +91,6 @@ def init_extensions(app: Flask) -> None:
         cache.init_app(app)
     except Exception as e:
         app.logger.warning(f"Cache initialization failed: {e}")
-
-    # JWT (will be added in auth milestone)
-    # from flask_jwt_extended import JWTManager
-    # jwt = JWTManager(app)
 
     # SocketIO (will be added in real-time milestone)
     # from flask_socketio import SocketIO

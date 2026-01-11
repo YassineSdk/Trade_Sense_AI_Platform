@@ -1,23 +1,23 @@
-import { Outlet, Link } from 'react-router-dom'
-import { useAuthStore } from '@store/authStore'
+import { Outlet } from "react-router-dom";
+import Sidebar from "@components/dashboard/Sidebar";
+import Header from "@components/dashboard/Header";
 
 export default function DashboardLayout() {
-  const { user, logout } = useAuthStore()
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow">
-        <div className="container-custom py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">TradeSense AI</h1>
-          <div className="flex items-center gap-4">
-            <span>Welcome, {user?.firstName || user?.username}</span>
-            <button onClick={logout} className="btn-danger">Logout</button>
-          </div>
-        </div>
-      </nav>
-      <main className="container-custom py-8">
-        <Outlet />
-      </main>
+    <div className="min-h-screen bg-gray-900">
+      {/* Fixed Sidebar */}
+      <Sidebar />
+
+      {/* Main Content Area */}
+      <div className="ml-[280px] min-h-screen flex flex-col">
+        {/* Top Header */}
+        <Header />
+
+        {/* Main Dashboard Content */}
+        <main className="flex-1 p-6">
+          <Outlet />
+        </main>
+      </div>
     </div>
-  )
+  );
 }
